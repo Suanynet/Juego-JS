@@ -56,7 +56,7 @@ for (let index = 0; index < divs.length; index++) {
           divs[valorDato].style.background = "skyblue"
         
 
-        divs[valorDato].style.pointerEvents = "none"
+         divs[valorDato].style.pointerEvents = "none"
 
 
 
@@ -112,7 +112,7 @@ for (let index = 0; index < divs.length; index++) {
 
 
 
-        if (divs[0].textContent === "⛱️" && divs[1].textContent === "⛱️" && divs[2].textContent === "") {
+        if (divs[0].textContent === "⛱️" && divs[1].textContent === "⛱️" && divs[2].textContent === "⛱️") {
           text.innerText = "Felicidades jugador ⛱️, haz ganado el juego"
           sumpoints++
 
@@ -186,6 +186,22 @@ save.addEventListener("click", function () {
   
 
 })
+
+if (!datosol) {
+  let empate = true;
+
+  for (let index = 0; index < divs.length; index++) {
+      if (divs[index].textContent === "") {
+          empate = false;
+          break;
+      }
+  }
+
+  if (empate) {
+      text.innerText = "¡Es un empate!";
+  }
+}
+
 
 
 
